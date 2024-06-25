@@ -13,6 +13,9 @@ const Index = () => {
     if (chatIcon && chatbot) {
       chatIcon.addEventListener('click', () => {
         chatbot.style.display = 'block';
+        chatbot.style.top = '50%';
+        chatbot.style.left = '50%';
+        chatbot.style.transform = 'translate(-50%, -50%)';
       });
     }
   }, []);
@@ -24,7 +27,7 @@ const Index = () => {
         <Text>Chat with the agent to start making edits.</Text>
       </VStack>
       <div className="voiceflow-chat-icon" style={{ cursor: 'pointer', position: 'fixed', bottom: '20px', right: '20px', background: '#007bff', color: '#fff', padding: '10px', borderRadius: '50%' }}>Chat</div>
-      <div className="voiceflow-chatbot" style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 10000, display: 'none' }}></div>
+      <div className="voiceflow-chatbot" style={{ position: 'fixed', zIndex: 10000, display: 'none' }}></div>
       <script type="text/javascript">
         {`
           (function(d, t) {
